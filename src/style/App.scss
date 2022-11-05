@@ -1,4 +1,4 @@
-// DESKTOP
+//#region DESKTOP
 .layout-container {
   min-height: 85vh;
   width: 80vw;
@@ -417,8 +417,9 @@ details[open] {
   gap: 2rem;
 }
 /************************/
+//#endregion DESKTOP
 
-// Mobile
+//#region MOBILE
 @media (max-width: 425px) {
   /* Layout */
   .layout-container {
@@ -584,3 +585,4 @@ details[open] {
     padding: 2rem 0 0 0;
   }
 }
+//#endregion MOBILE

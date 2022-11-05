@@ -1,10 +1,11 @@
 import { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import HomeCard from "../components/HomeCard";
 
 interface HomeProps {}
 
-type accomodation = {
-  id: number;
+export type accomodation = {
+  id: string;
   title: string;
   cover: string;
   description: string;
@@ -25,29 +26,23 @@ const Home: FC<HomeProps> = () => {
         .then((data) => data.json())
         .then((jsonData) => setAccomodations(jsonData));
   }, []);
-
   return (
     <>
-      <div className="image-banner">
+      <div
+        className="image-banner"
+        style={{ backgroundImage: "url(src/assets/IMG.png)" }}
+      >
         <h2>Chez vous, partout ailleurs</h2>
         <div className="overlay"></div>
       </div>
       <div className="cards-container">
         {accomodations.map((accomodation) => {
           return (
-            <Link
-              to={`/accomodation/${accomodation.id}`}
-              key={`${accomodation.id}`}
-              className="card-wrapper"
-            >
-              <div className="card">
-                <div className="overlay"></div>
-                <img src={`${accomodation.cover}`} alt="" />
-                <div className="content">
-                  <p className="location-title">{accomodation.title}</p>
-                </div>
-              </div>
-            </Link>
+            <HomeCard
+              id={accomodation.id}
+              cover={accomodation.cover}
+              title={accomodation.title}
+            />
           );
         })}
       </div>

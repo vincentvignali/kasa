@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Banner from "../components/Banner";
 import HomeCard from "../components/HomeCard";
 
 interface HomeProps {}
@@ -20,6 +21,7 @@ export type accomodation = {
 const Home: FC<HomeProps> = () => {
   const [accomodations, setAccomodations] = useState<accomodation[] | []>([]);
 
+  //Fetcher
   useEffect(() => {
     if (accomodations.length === 0)
       fetch("/accomodations.json")
@@ -28,13 +30,11 @@ const Home: FC<HomeProps> = () => {
   }, []);
   return (
     <>
-      <div
-        className="image-banner"
-        style={{ backgroundImage: "url(src/assets/IMG.png)" }}
-      >
-        <h2>Chez vous, partout ailleurs</h2>
-        <div className="overlay"></div>
-      </div>
+      <Banner
+        imageUrl="src/assets/IMG.png"
+        text="Chez vous, partout et ailleurs"
+      />
+
       <div className="cards-container">
         {accomodations.map((accomodation) => {
           return (

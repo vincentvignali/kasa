@@ -1,19 +1,12 @@
 import { FC } from "react";
+import Banner from "../components/Banner";
 
 interface AboutProps {}
 
 const About: FC<AboutProps> = () => {
   return (
     <>
-      <div
-        className="image-banner"
-        style={{
-          backgroundImage: "url(src/assets/about-banner.png)",
-        }}
-      >
-        <h2>Chez vous, partout ailleurs</h2>
-        <div className="overlay"></div>
-      </div>
+      <Banner imageUrl="src/assets/about-banner.png" />
       <div className="about-accordeon">
         <details className="details">
           <summary className="summary">
@@ -21,10 +14,9 @@ const About: FC<AboutProps> = () => {
             <div>{""}</div>
           </summary>
           <div className="content">
-            {" "}
-            La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-            comportement discriminatoire ou de perturbation du voisinage
-            entraînera une exclusion de notre plateforme.
+            Les annonces postées sur Kasa garantissent une fiabilité totale. Les
+            photos sont conformes aux logements, et toutes les informations sont
+            régulièrement vérifiées par nos équipes.
           </div>
         </details>
         <details className="details">
@@ -33,7 +25,6 @@ const About: FC<AboutProps> = () => {
             <div>{""}</div>
           </summary>
           <div className="content">
-            {" "}
             La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
             comportement discriminatoire ou de perturbation du voisinage
             entraînera une exclusion de notre plateforme.
@@ -45,22 +36,23 @@ const About: FC<AboutProps> = () => {
             <div>{""}</div>
           </summary>
           <div className="content">
-            {" "}
-            La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-            comportement discriminatoire ou de perturbation du voisinage
-            entraînera une exclusion de notre plateforme.
+            Nos équipes se tiennent à votre disposition pour vous fournir une
+            expérience parfaite. N'hésitez pas à nous contacter si vous avez la
+            moindre question.
           </div>
         </details>
         <details className="details">
           <summary className="summary">
-            <p>Responsabilité</p>
+            <p>Sécurité</p>
             <div>{""}</div>
           </summary>
           <div className="content">
-            {" "}
-            La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-            comportement discriminatoire ou de perturbation du voisinage
-            entraînera une exclusion de notre plateforme.
+            La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
+            pour les voyageurs, chaque logement correspond aux critères de
+            sécurité établis par nos services. En laissant une note aussi bien à
+            l'hôte qu'au locataire, cela permet à nos équipes de vérifier que
+            les standards sont bien respectés. Nous organisons également des
+            ateliers sur la sécurité domestique pour nos hôtes.
           </div>
         </details>
       </div>

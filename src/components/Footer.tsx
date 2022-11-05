@@ -9,6 +9,7 @@ const Footer: FC<FooterProps> = () => {
       <Link className="logo-container-footer" to="/">
         <img src="src/assets/LOGO (1).png" alt="" />
       </Link>
+      <p>© 2020 Kasa. All rights reserved</p>
     </div>
   );
 };
